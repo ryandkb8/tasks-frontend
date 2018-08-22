@@ -1,0 +1,42 @@
+.header {
+    text-align: center;
+}
+
+#tasksTable {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+#addTaskResult {
+    font-size: 28px;
+}
+
+.form-row {
+    padding-bottom: 8px;
+}
+
+.form-label {
+    display: inline-block;
+    width: 78px;
+}
+
+.filter-row {
+    padding-bottom: 8px;
+}
+
+.table-container {
+    padding-right: 12px;
+    width: 49%;
+    float: left;
+}
+
+.details-container {
+    width: 49%;
+    float: left;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title>Tasks</title>
+</head>
+
+<h1 class="header">
+    Tasks
+</h1>
+
+
+<!-- <body>
+    <button class="button buttonAdd" onclick="location.href='add.html'">Add Task</button>
+    <button class="button buttonViews">View Tasks</button>
+</body> -->
+
+            <!-- <tbody>
+                            <tr class="task-row" task-id='testing'>
+                                <td class="name">Testing</td>
+                                <td class="description">asdfasdfasdf</td>
+                                <td class="due-date">You better remove that ^</td>
+                                <td class="delete">
+                                    <button class="delete-btn">Delete</button>
+                                </td>
+                            </tr>
+                            <tr class="task-row" task-id='testing2'>
+                                <td>asdf</td>
+                                <td>asdfS</td>
+                                <td>asdfasdf</td>
+                                <td class="delete">
+                                    <button class="delete-btn">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody> -->
+
+
+<body>
+    <div class="table-container">
+        <div class="filter-row">
+            <button id="all">All</button>
+            <button id="overdue">Overdue</button>
+            <button id="complete">Complete</button>
+        </div>
+        <table id="tasksTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Due Date</th>
+                    <th>Completed at</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="details-container">
+        <h3 class="current-task">New Task</h3>
+        <form id="taskForm" task-id="">
+            <div class="form-row">
+                <label class="form-label" for="name">Name: </label>
+                <input type="text" class="name" name="name" id="nameInput">
+            </div>
+            <div class="form-row">
+                <label class="form-label" for="description">Description: </label>
+                <input type="text" class="description" name="description" id="descriptionInput">
+            </div>
+            <div class="form-row">
+                <label class="form-label" for="dueDate">Due Date: </label>
+                <input type="text" class='due-date' name="dueDate" id="dueDateInput">
+            </div>
+            <div class="form-row">
+                <label class="form-label" for="completedAt">Completed At: </label>
+                <input type="text" class='completed-at' name="completedAt" id="completedAtInput">
+            </div>
+            <div class="form-row">
+                <input id="formSubmit" type="submit" value="submit">
+            </div>
+        </form>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
