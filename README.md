@@ -3,7 +3,11 @@
 This is the frontend for the tasks service.
 
 ## Bringing up local instance
-This relies on `tasks-backend` and `tasks-postgresql`. In order to bring up the entire suite run `docker-compose up`
+This relies on `tasks-backend` and `tasks-postgresql`. In order to bring up the entire suite run the following:
+```
+docker-compose build
+docker-compose up
+```
 
 ## Building docker image
 To build the docker image run the following: `./build.sh`
