@@ -40,3 +40,34 @@ td, th {
     width: 49%;
     float: left;
 }
+
+.error-message {
+    background-color: red;
+    padding: 4px 0;
+    text-align: center;
+    border-radius: 100px;
+}
+#errors {
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+.same-day {
+    background-color: orange;
+}
+
+.next-day {
+    background-color: yellow
+}
+
+#addTask {
+    margin-bottom: 6px;
+}
+
+.description-column {
+    max-width: 120px;
+    word-wrap: break-word;
+}
