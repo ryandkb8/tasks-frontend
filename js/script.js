@@ -46,7 +46,7 @@ $('#formSubmit').click(e => {
     if (completedAt && !moment(completedAt).isValid()) {
         errors.push(ERRORS.COMPLETED_AT_INVALID_FORMAT);
     }
-    
+
     var errorsString = errors.join('. ');
 
     if (errorsString) {
@@ -184,6 +184,7 @@ function addRow(table, data) {
 
     var sameDay = moment().startOf('day').isSame(taskDueDate);
     var nextDay = moment().add(1, 'd').startOf('day').isSame(taskDueDate);
+    var pastDue = moment().startOf('day').isAfter(taskDueDate);
 
     var newRow = table.insertRow(table.rows.length);
     newRow.className = 'task-row'
@@ -204,6 +205,10 @@ function addRow(table, data) {
 
     if (nextDay && !data.completed_at) {
         $(newRow).addClass('next-day');
+    }
+
+    if (pastDue && !data.completed_at) {
+        $(newRow).addClass('past-due')
     }
 
     var completedAtCell = newRow.insertCell(3);

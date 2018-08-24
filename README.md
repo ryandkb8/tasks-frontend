@@ -9,6 +9,8 @@ docker-compose build
 docker-compose up
 ```
 
+After it is running you can visit `http://localhost:8080/`
+
 ## Building docker image
 To build the docker image run the following: `./build.sh`
 
