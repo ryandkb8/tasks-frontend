@@ -5,7 +5,8 @@ var axiosInstance = axios.create({
 var ENDPOINTS = {
     ALL: '/task',
     OVERDUE: '/task?overdue=true',
-    COMPLETED: '/task?completed=true'
+    COMPLETED: '/task?completed=true',
+    TODAY_TOMORROW: '/task?dueToday=true&dueTomorrow=true'
 };
 
 var ERRORS = {
@@ -63,6 +64,11 @@ $('#formSubmit').click(e => {
 $('#all').click(e => {
     e.preventDefault();
     getTaskList();
+})
+
+$('#todayTomorrow').click(e => {
+    e.preventDefault();
+    getTaskList(ENDPOINTS.TODAY_TOMORROW);
 })
 
 $('#overdue').click(e => {
@@ -208,7 +214,7 @@ function addRow(table, data) {
     }
 
     if (pastDue && !data.completed_at) {
-        $(newRow).addClass('past-due')
+        $(newRow).addClass('over-due')
     }
 
     var completedAtCell = newRow.insertCell(3);
