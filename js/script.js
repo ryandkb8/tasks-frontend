@@ -40,11 +40,11 @@ $('#formSubmit').click(e => {
 
     if (!dueDate) {
         errors.push(ERRORS.DUE_DATE_MISSING);
-    } else if (!moment(dueDate).isValid()) {
+    } else if (!isValidDate(dueDate)) {
         errors.push(ERRORS.DUE_DATE_INVALID_FORMAT);
     }
 
-    if (completedAt && !moment(completedAt).isValid()) {
+    if (completedAt && !isValidDate(completedAt)) {
         errors.push(ERRORS.COMPLETED_AT_INVALID_FORMAT);
     }
 
@@ -92,6 +92,15 @@ $('#addTask').click(e => {
     $('#dueDateInput').val('');
     $('#completedAtInput').val('');
 })
+
+// NOTE: THIS FUNCTION WAS COPIED FROM https://stackoverflow.com/questions/18758772/how-do-i-validate-a-date-in-this-format-yyyy-mm-dd-using-jquery/18759013
+function isValidDate(dateString) {
+    var regEx = /^\d{4}-\d{2}-\d{2}$/;
+    if (!dateString.match(regEx)) return false;
+    var d = new Date(dateString);
+    if (Number.isNaN(d.getTime())) return false;
+    return d.toISOString().slice(0, 10) === dateString;
+}
 
 function displayError(message) {
     $('.error-message').html(message)
